@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <title> Painter</title>
+    
+<body>
+
+<h1>Painter entry Sirisha Panuganti</h1>
+
+<h2>Getting input</h2>
+
+<form>
+    <label for="secret_string">The hidden painter name </label>
+    <input type ="password" id="secret_string" name="secret_string" value="Monet"> <br>
+
+    <label for="check">Guess the painter</label>
+    <input type ="text" id="check" name="check" autofocus> <br>
+
+    <input type="button" onclick="checkPainter()" value="Check the guess">
+</form>
+
+<p id="result">This text will be replaced </p>
+
+<script> 
+
+    var good = 0
+    var oops = 0
+
+    function checkPainter (){
+         
+    pwd = document.getElementById("secret_string").value
+    check = document.getElementById("check").value
+    
+    if(check == pwd){
+        good = good+1;
+        alert("You got it right");
+    }
+    else{
+       oops =  oops+ 1;
+        alert("Sorry")
+    }
+    out = document.getElementById("result")
+    out.innerHTML = "Good: "
+    out.innerHTML += good
+    out.innerHTML += " oops: "
+    out.innerHTML += oops
+}
+
+</script>
+
+</body>
+</html> 
