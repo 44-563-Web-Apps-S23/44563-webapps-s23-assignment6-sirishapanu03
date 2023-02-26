@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+ 
+<body>
+
+    <h1>Sirisha Panuganti shows currency conversion</h1>
+
+<form>
+    <label for="baseAmount">Enter base amount</label>
+    <input type ="number" id="baseAmount" name="baseAmount" value=50> <br>
+
+    <label for="conversion">Enter the conversion rate</label>
+    <input type ="number" id="conversion" name="conversion" value=35>
+
+    <input type="button" onclick="convert()" value="Show conversions">
+</form>
+
+
+<p id="result">This text will be replaced </p>
+
+<script> 
+
+function convert (){
+
+    let toShow = ""
+    base = document.getElementById("baseAmount").value
+    conversionRate = document.getElementById("conversion").value
+   for(let i =1; i<=16;i*=2){
+    if(conversionRate % 1 == 0 ){
+        toShow  =  toShow + base *i + " is " + (base * i * conversionRate) + ";"
+    }
+    else{
+        toShow  =  toShow + base *i + " is " + (base * i * conversionRate).toFixed(1) + ";"
+    }
+   }
+    
+    out = document.getElementById("result")
+    out.innerHTML = "conversions are: "  + toShow   
+}
+</script>
+
+</body>
+</html> 
