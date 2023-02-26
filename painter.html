@@ -20,10 +20,17 @@
 
 <p id="result">This text will be replaced </p>
 
+<div class = "container">
+   <img id = plant src = "panicum virgatum.jpg" class="image" width="100" height="100"><br>
+   <input type="button" onclick="selectImage()" value="Select Image">
+</div>
+
 <script> 
 
     var good = 0
     var oops = 0
+
+    var useImage =1;
 
     function checkPainter (){
          
@@ -43,6 +50,20 @@
     out.innerHTML += good
     out.innerHTML += " oops: "
     out.innerHTML += oops
+}
+
+function selectImage(){
+    switch(useImage){
+        case 1: document.getElementById("plant").src = "acacia.jpg";
+        useImage++
+        break;
+        case 2:document.getElementById("plant").src = "Neolitsea.jpg";
+        useImage++;
+        break;
+        case 3:document.getElementById("plant").src = "panicum virgatum.jpg"
+        useImage = 1;
+        break;
+    }
 }
 
 </script>
