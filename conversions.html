@@ -26,12 +26,7 @@ function convert (){
     base = document.getElementById("baseAmount").value
     conversionRate = document.getElementById("conversion").value
    for(let i =1; i<=16;i*=2){
-    if(conversionRate % 1 == 0 ){
-        toShow  =  toShow + base *i + " is " + (base * i * conversionRate) + ";"
-    }
-    else{
-        toShow  =  toShow + base *i + " is " + (base * i * conversionRate).toFixed(1) + ";"
-    }
+        toShow  =  toShow + base *i + " is " + ((base * i * conversionRate) % 1 == 0 ? (base * i * conversionRate) : (base * i * conversionRate).toFixed(1) )+ ";" 
    }
     
     out = document.getElementById("result")
