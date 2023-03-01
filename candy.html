@@ -60,21 +60,12 @@ function selectBox (){
 
 function updateBox(){
 
-    
-    dark =" "
-    nuts = " "
-    chewy = " "
-    if(document.getElementById("size").value == "dark"){
-    my_candy_box["dark"] = document.getElementById("price").value
-    }
-    else if(document.getElementById("size").value == "nuts"){
-    my_candy_box["nuts"] = document.getElementById("price").value
-    }else {
-    my_candy_box["chewy"] = document.getElementById("price").value
-    }
-
+   size = 0
+   price = 0
+    my_candy_box.size = document.getElementById("size").value,
+    my_candy_box.price = document.getElementById("price").value    
     out = document.getElementById("result1")
-    out.innerHTML =  "Dark: " + my_candy_box.dark + ", Nuts: " + my_candy_box.nuts + ", Chewy: " + my_candy_box.chewy 
+    out.innerHTML = "Dark: " + my_candy_box.dark + ", Nuts: " + my_candy_box.nuts + ", Chewy: " + my_candy_box.chewy + ", Size: " + my_candy_box.size + ", Price: " + my_candy_box.price
 }
 </script>
 
