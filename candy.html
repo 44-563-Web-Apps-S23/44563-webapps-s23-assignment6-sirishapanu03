@@ -20,27 +20,61 @@
     <input type="button" onclick="selectBox()" value="Select a box">
 </form>
 
-
 <p id="result">This text will be replaced</p>
+
+<form>
+
+    <label for="size">Enter the Size</label>
+    <input type="text" id="size" name="size" value="size"><br>
+
+    <label for="price">Enter price</label>
+    <input type="text" id="price" name="price" value="price"><br>
+    
+
+    <input type="button" onclick = "updateBox()" value="Update the Box">
+</form>
+
+<p id="result1">This text will be replaced</p>
 
 <script> 
 
 var my_candy_box = []
 function selectBox (){
-
+    
     my_candy_box = []
-    choc = document.getElementById("dark chocolate").checked
-    nuts = document.getElementById("nuts").checked
-    chewy = document.getElementById("chewy").checked
-    my_candy_box.push(choc)
-    my_candy_box.push(nuts)
-    my_candy_box.push(chewy)
-    
-    
 
-    out = document.getElementById("result")
-    out.innerHTML = my_candy_box
+    dark = false
+    nuts = false
+    chewy = false
+    my_candy_box = {
+        dark : document.getElementById("dark chocolate").checked,
+       nuts : document.getElementById("nuts").checked,
+       chewy : document.getElementById("chewy").checked
+
+    }
     
+    out = document.getElementById("result")
+    out.innerHTML = "Dark: " + my_candy_box.dark + ", Nuts: " + my_candy_box.nuts + ", Chewy: " + my_candy_box.chewy 
+    
+}
+
+function updateBox(){
+
+    
+    dark =" "
+    nuts = " "
+    chewy = " "
+    if(document.getElementById("size").value == "dark"){
+    my_candy_box["dark"] = document.getElementById("price").value
+    }
+    else if(document.getElementById("size").value == "nuts"){
+    my_candy_box["nuts"] = document.getElementById("price").value
+    }else {
+    my_candy_box["chewy"] = document.getElementById("price").value
+    }
+
+    out = document.getElementById("result1")
+    out.innerHTML =  "Dark: " + my_candy_box.dark + ", Nuts: " + my_candy_box.nuts + ", Chewy: " + my_candy_box.chewy 
 }
 </script>
 
